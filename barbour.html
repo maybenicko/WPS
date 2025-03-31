@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-png">
+    <title>WPS</title>
+    <link rel="stylesheet" href="css/barbour.css">
+</head>
+<body>
+    <div class="tartan-pattern"></div>
+    <button id="theme-toggle">🌙</button>
+    
+    <div class="upload-container">
+        <h2>Upload Barbour PDF</h2>
+        <div id="drop-area">
+            <p>Drag & Drop<br> or <br> <span id="browse-btn">Click to Browse</span></p>
+            <input type="file" id="file-input" accept="application/pdf">
+        </div>
+        <p id="file-name"></p>
+        <button id="upload-btn" disabled>Upload</button>
+        <p id="status"></p>
+    </div>
+    <script src="js/barbour.js"></script>
+</body>
+</html>
