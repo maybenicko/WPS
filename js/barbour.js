@@ -10,12 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const browseBtn = document.getElementById("browse-btn");
     const uploadSection = document.getElementById("upload-section");
 
-    // Open file dialog when "Click to Browse" is clicked
     browseBtn.addEventListener("click", () => {
         fileInput.click();
     });
 
-    // Handle file selection
     fileInput.addEventListener("change", (event) => {
         const file = event.target.files[0];
         if (file) {
@@ -24,10 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Enable file drop functionality
     dropArea.addEventListener("dragover", (event) => {
         event.preventDefault();
-        dropArea.classList.add("active"); // Change background when dragging
+        dropArea.classList.add("active"); 
     });
 
     dropArea.addEventListener("dragleave", () => {
@@ -64,13 +61,11 @@ document.addEventListener("DOMContentLoaded", () => {
             statusText.textContent = result;
         } catch (error) {
             statusText.textContent = "Upload failed. Please try again.";
-            // Hide the upload section and show the error section
             uploadSection.classList.add("hidden");
-            errorSection.style.display = "block"; // Show the error section
+            errorSection.style.display = "block";
         }
     }
 
-    // Handle submit link
     submitLinkBtn.addEventListener("click", () => {
         const link = linkInput.value.trim();
         if (link) {
@@ -79,13 +74,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Handle theme toggle
     themeToggle.addEventListener("click", () => {
         document.body.classList.toggle("dark-mode");
         themeToggle.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
     });
 
-    // Handle file upload when the upload button is clicked
     uploadBtn.addEventListener("click", () => {
         const file = fileInput.files[0];
         if (file) {
@@ -102,7 +95,7 @@ tartan.addEventListener("mousedown", (e) => {
     isDragging = true;
     startX = e.clientX - offsetX;
     startY = e.clientY - offsetY;
-    tartan.style.cursor = "grabbing"; // Change cursor when dragging
+    tartan.style.cursor = "grabbing";
 });
 
 window.addEventListener("mousemove", (e) => {
@@ -116,5 +109,5 @@ window.addEventListener("mousemove", (e) => {
 
 window.addEventListener("mouseup", () => {
     isDragging = false;
-    tartan.style.cursor = "grab"; // Reset cursor when released
+    tartan.style.cursor = "grab";
 });

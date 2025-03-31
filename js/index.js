@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const barbourWord = "BARBOUR";
     const baracutaWord = "BARACUTA";
-    
     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     
     const cyclesPerLetter = 10;
