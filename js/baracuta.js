@@ -94,8 +94,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-
-
 let tartan = document.querySelector(".tartan-pattern");
 let isDragging = false;
 let startX, startY, offsetX = 0, offsetY = 0;

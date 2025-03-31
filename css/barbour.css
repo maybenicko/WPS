@@ -103,7 +103,10 @@ html, body {
     cursor: pointer;
 }
 
-/* Dark mode styles */
+#error-section {
+    display: none;
+}
+
 .dark-mode {
     color: var(--text-dark);
 }
