@@ -9,6 +9,20 @@ body {
     display: flex;
     flex-direction: row;
 }
+
+.logo {
+    position: absolute;
+    border: white 2px solid;
+    border-radius: 50%;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(15vw, 80px);
+    height: auto;
+    z-index: 1000;
+    cursor: pointer;
+    box-shadow: 13px 13px 13px rgba(0, 0, 0, 0.5);
+}
   
 .barbour, .baracuta {
     flex: 1;

@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const errorSection = document.getElementById("error-section");
     const submitLinkBtn = document.getElementById("submit-link");
     const linkInput = document.getElementById("link-input");
-    const themeToggle = document.getElementById("theme-toggle");
     const fileInput = document.getElementById("file-input");
     const dropArea = document.getElementById("drop-area");
     const browseBtn = document.getElementById("browse-btn");
@@ -74,11 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    themeToggle.addEventListener("click", () => {
-        document.body.classList.toggle("dark-mode");
-        themeToggle.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
-    });
-
     uploadBtn.addEventListener("click", () => {
         const file = fileInput.files[0];
         if (file) {
@@ -91,23 +85,32 @@ let tartan = document.querySelector(".tartan-pattern");
 let isDragging = false;
 let startX, startY, offsetX = 0, offsetY = 0;
 
-tartan.addEventListener("mousedown", (e) => {
+function startDrag(e) {
     isDragging = true;
-    startX = e.clientX - offsetX;
-    startY = e.clientY - offsetY;
-    tartan.style.cursor = "grabbing"; 
-});
+    const touch = e.touches ? e.touches[0] : e;
+    startX = touch.clientX - offsetX;
+    startY = touch.clientY - offsetY;
+    tartan.style.cursor = "grabbing";
+}
 
-window.addEventListener("mousemove", (e) => {
+function dragMove(e) {
     if (!isDragging) return;
-    
-    offsetX = e.clientX - startX;
-    offsetY = e.clientY - startY;
+
+    const touch = e.touches ? e.touches[0] : e;
+    offsetX = touch.clientX - startX;
+    offsetY = touch.clientY - startY;
     
     tartan.style.backgroundPosition = `${offsetX}px ${offsetY}px`;
-});
+}
 
-window.addEventListener("mouseup", () => {
+function stopDrag() {
     isDragging = false;
     tartan.style.cursor = "grab";
-});
+}
+
+tartan.addEventListener("mousedown", startDrag);
+window.addEventListener("mousemove", dragMove);
+window.addEventListener("mouseup", stopDrag);
+tartan.addEventListener("touchstart", startDrag);
+window.addEventListener("touchmove", dragMove);
+window.addEventListener("touchend", stopDrag);
