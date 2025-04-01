@@ -43,7 +43,7 @@ html, body {
     transform: translate(-50%, -50%);
     background-size: cover;
     align-items: center;
-    padding: min(6vw, 20px);
+    padding: min(3vw, 20px);
     border-radius: 10%;
     box-shadow: 13px 13px 13px rgba(0, 0, 0, 0.5);
     width: min(50vw, 400px);
@@ -56,6 +56,7 @@ h2 {
     color: rgb(255, 255, 255);
     text-transform: uppercase;
     mix-blend-mode: difference;
+    font-size: min(2vw, 25px);
 }
 
 #drop-area {
@@ -69,13 +70,13 @@ h2 {
         rgba(77, 77, 77, 0.4) 100%);
     transition: background 0.3s;
     text-transform: uppercase;
-    height: 40%;
-    font-size: min(6vw, 15px);
+    font-size: min(2vw, 15px);
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 45%;
 }
 
 #drop-area.active {
@@ -95,20 +96,24 @@ h2 {
 }
 
 #upload-btn {
-    margin-top: 10px;
-    padding: 10px 15px;
+    height: 8%;
+    margin-top: 4%;
+    padding: 2% 4%;
     border: none;
     color: white;
     border-radius: 5px;
     text-transform: uppercase;
     border: #e0e0e0 0.5px solid;
     cursor: pointer;
-    font-size: 12px;
+    font-size: min(1.8vw, 12px);
     background: linear-gradient(to right, 
         rgb(15, 26, 29) 0%, 
         rgb(74, 72, 82) 50%,
         rgb(15, 26, 29) 100%);
-    margin-top: 25px;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #upload-btn:disabled {
