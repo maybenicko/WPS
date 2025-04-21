@@ -1,5 +1,3 @@
-credentials.json
-token.json
 *.py
 /.idea
 /venv
