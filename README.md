@@ -1,3 +1,0 @@
-# WPS
-
-Comings soon...

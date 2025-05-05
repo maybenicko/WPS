@@ -45,8 +45,13 @@ document.addEventListener("DOMContentLoaded", () => {
         let formData = new FormData();
         formData.append("pdf", file);
 
+        const path = window.location.pathname;
+        const source = path.split("/").pop().replace(".html", "");
+
+        formData.append("source", source);
+
         try {
-            let response = await fetch("/upload", {
+            let response = await fetch("http://127.0.0.1:5000/upload", {
                 method: "POST",
                 body: formData
             });
@@ -58,6 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             statusText.textContent = result;
+            console.log(result);
         } catch (error) {
             statusText.textContent = "Upload failed. Please try again.";
             uploadSection.classList.add("hidden");
